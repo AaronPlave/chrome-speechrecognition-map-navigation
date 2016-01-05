@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script>
+    var annyangScript = document.createElement('script');
+    if (/localhost/.exec(window.location)) {
+        annyangScript.src = "//localhost:8443/annyang.js"
+    } else {
+        annyangScript.src = "//cdnjs.cloudflare.com/ajax/libs/annyang/2.1.0/annyang.min.js"
+    }
+    document.write(annyangScript.outerHTML)
+    </script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="Cesium/Cesium.js"></script>
+    <script src="leaflet.js"></script>
+    <script src="mapCtrl.js"></script>
+    <script src="speechCtrl.js"></script>
+    <script src="pageCtrl.js"></script>
+    <script src="recognizer.js"></script>
+    <link rel="stylesheet" href="css/leaflet.css" />
+    <link rel="stylesheet" href="css/main.css" />
+</head>
+
+<body>
+    <div id="map" class="width: 600px; height: 400px; position: relative;"></div>
+    <div id="cesiumContainer"></div>
+    <div class="contentContainer">
+        <div id="textContainer" class="textContainer"></div>
+    </div>
+    <div id="unsupported" class="hidden">
+        <h4>It looks like your browser doesn't support speech recognition.</h4>
+        <p>annyang plays nicely with all browsers, progressively enhancing modern browsers that support the SpeechRecognition standard, while leaving users with older browsers unaffected.</p>
+        <p>Please visit <a href="http://www.annyangjs.com/">http://www.annyangjs.com/</a> in a desktop browser like Chrome.</p>
+    </div>
+</body>
+
+</html>
